@@ -6,15 +6,17 @@ export interface TextInputProps extends HTMLAttributes<HTMLElement> {
     placeholder?: string;
     id?: string;
     className?: string;
+    onChange: () => void;
 }
 
-const TextInput: React.FC<TextInputProps> = ({name, placeholder, id, className}) => {
+const TextInput: React.FC<TextInputProps> = ({name, placeholder, id, className, onChange}) => {
     return <input
         name = {name}
         id = {id}
         type = "text"
         className = {className}
         placeholder = {placeholder}>
+        onChange={onChange}    
     </input>
 }
 
