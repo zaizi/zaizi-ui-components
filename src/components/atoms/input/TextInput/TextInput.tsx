@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, useState } from "react";
 
 export interface TextInputProps extends HTMLAttributes<HTMLElement> {
     name?: string;
@@ -10,13 +10,18 @@ export interface TextInputProps extends HTMLAttributes<HTMLElement> {
 }
 
 const TextInput: React.FC<TextInputProps> = ({name, placeholder, id, className, onChange}) => {
+    const [value, setValue] = useState("")
+    let valueChange = function(text) {
+        setValue(text.target.value)
+    }
     return <input
         name = {name}
         id = {id}
         type = "text"
         className = {className}
-        placeholder = {placeholder}>
-        onChange={onChange}    
+        value={value}
+        placeholder = {placeholder}
+        onChange={(text) => valueChange(text)}>
     </input>
 }
 
