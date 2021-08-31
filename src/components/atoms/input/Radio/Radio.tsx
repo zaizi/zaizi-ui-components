@@ -14,7 +14,6 @@ const Radio: React.FC<RadioProps> = (props) => {
 
     const buttonClicked = (e) => {
         setValue(e.target.value)
-        console.log("Clicked")
     }
 
     return <input 
