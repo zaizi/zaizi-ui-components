@@ -5,7 +5,6 @@ export interface RadioProps extends HTMLAttributes<HTMLElement> {
     className?: string;
     value: string;
     checked: boolean;
-    type: string;
     onClick: () => void;
 }
 
